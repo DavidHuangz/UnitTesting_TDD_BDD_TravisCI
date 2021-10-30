@@ -1,0 +1,63 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.2.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'java'
+    id 'jacoco'
+}
+
+group 'nz.ac.auckland.se754'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'javax.servlet:jstl'
+    implementation "org.apache.tomcat.embed:tomcat-embed-jasper"
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.1")
+    testRuntimeOnly "org.junit.platform:junit-platform-commons:1.7.0"
+    testImplementation "org.mockito:mockito-core:3.9.0"
+    testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter', version: '3.9.0'
+    testImplementation 'io.cucumber:cucumber-java:6.8.1'
+    testImplementation 'io.cucumber:cucumber-junit:6.8.1'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation group: 'de.monochromata.cucumber', name: 'reporting-plugin', version: '4.0.102'
+}
+
+task cucumber() {
+    dependsOn assemble, testClasses
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty',
+                    '--plugin', 'de.monochromata.cucumber.report.PrettyReports:target/cucumber',
+                    '--glue', 'nz.auckland.se754.a6.webapp', // package of the step definitions (java files)
+                    'src/test/resources/features'] // where the features file are located (feature files)
+        }
+    }
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled false
+    }
+}
+
+check.dependsOn jacocoTestReport

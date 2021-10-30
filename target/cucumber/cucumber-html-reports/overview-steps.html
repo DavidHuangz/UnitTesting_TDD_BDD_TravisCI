@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>No Name (add projectName to cucumber-reporting.properties)</td>
+      <td>31 May 2021, 23:14</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.each_group_has_at_least_users(java.lang.Integer)</td>
+              <td>3</td>
+              <td class="duration" data-value="200510400">0.200</td>
+              <td class="duration" data-value="200510400">0.344</td>
+              <td class="duration" data-value="601531200">0.601</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.each_group_has_at_most_users(java.lang.Integer)</td>
+              <td>3</td>
+              <td class="duration" data-value="125778466">0.125</td>
+              <td class="duration" data-value="125778466">0.202</td>
+              <td class="duration" data-value="377335400">0.377</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.i_add_users_to_the_meeting(java.lang.Integer)</td>
+              <td>10</td>
+              <td class="duration" data-value="60953410">0.060</td>
+              <td class="duration" data-value="60953410">0.068</td>
+              <td class="duration" data-value="609534100">0.609</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.i_can_see_an_error_message_for(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="33780350">0.033</td>
+              <td class="duration" data-value="33780350">0.039</td>
+              <td class="duration" data-value="135121400">0.135</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.i_can_see_groups_to_choose_from(java.lang.Integer)</td>
+              <td>5</td>
+              <td class="duration" data-value="32628420">0.032</td>
+              <td class="duration" data-value="32628420">0.041</td>
+              <td class="duration" data-value="163142100">0.163</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.i_can_see_the_group_config_parameters()</td>
+              <td>1</td>
+              <td class="duration" data-value="76066600">0.076</td>
+              <td class="duration" data-value="76066600">0.076</td>
+              <td class="duration" data-value="76066600">0.076</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.i_can_see_the_user_config_parameters()</td>
+              <td>1</td>
+              <td class="duration" data-value="105093800">0.105</td>
+              <td class="duration" data-value="105093800">0.105</td>
+              <td class="duration" data-value="105093800">0.105</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.i_cannot_see_the_config_parameters()</td>
+              <td>1</td>
+              <td class="duration" data-value="61054300">0.061</td>
+              <td class="duration" data-value="61054300">0.061</td>
+              <td class="duration" data-value="61054300">0.061</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.i_choose_to_make_groups_by_number_of_groups()</td>
+              <td>9</td>
+              <td class="duration" data-value="96418377">0.096</td>
+              <td class="duration" data-value="96418377">0.107</td>
+              <td class="duration" data-value="867765400">0.867</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.i_choose_to_make_groups_for_number_of_users()</td>
+              <td>10</td>
+              <td class="duration" data-value="91380460">0.091</td>
+              <td class="duration" data-value="91380460">0.122</td>
+              <td class="duration" data-value="913804600">0.913</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.i_click_the_random_user_allocation_option()</td>
+              <td>5</td>
+              <td class="duration" data-value="57250580">0.057</td>
+              <td class="duration" data-value="57250580">0.061</td>
+              <td class="duration" data-value="286252900">0.286</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.i_click_the_user_choice_allocation_option()</td>
+              <td>7</td>
+              <td class="duration" data-value="58480542">0.058</td>
+              <td class="duration" data-value="58480542">0.067</td>
+              <td class="duration" data-value="409363800">0.409</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.i_click_to_disband_the_group()</td>
+              <td>1</td>
+              <td class="duration" data-value="73064700">0.073</td>
+              <td class="duration" data-value="73064700">0.073</td>
+              <td class="duration" data-value="73064700">0.073</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.i_click_to_join_group(java.lang.Integer)</td>
+              <td>3</td>
+              <td class="duration" data-value="101756466">0.101</td>
+              <td class="duration" data-value="101756466">0.109</td>
+              <td class="duration" data-value="305269400">0.305</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.i_click_to_make_groups()</td>
+              <td>13</td>
+              <td class="duration" data-value="94929846">0.094</td>
+              <td class="duration" data-value="94929846">0.242</td>
+              <td class="duration" data-value="1234088000">1.234</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.i_have_gone_to_the_breakout_group_config()</td>
+              <td>20</td>
+              <td class="duration" data-value="136521410">0.136</td>
+              <td class="duration" data-value="136521410">1.063</td>
+              <td class="duration" data-value="2730428200">2.730</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.i_should_see_user_video_stream(java.lang.Integer)</td>
+              <td>1</td>
+              <td class="duration" data-value="30027400">0.030</td>
+              <td class="duration" data-value="30027400">0.030</td>
+              <td class="duration" data-value="30027400">0.030</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.i_type_into_the_group_input(java.lang.Integer)</td>
+              <td>7</td>
+              <td class="duration" data-value="64485642">0.064</td>
+              <td class="duration" data-value="64485642">0.077</td>
+              <td class="duration" data-value="451399500">0.451</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.i_type_into_the_user_input(java.lang.Integer)</td>
+              <td>6</td>
+              <td class="duration" data-value="63721616">0.063</td>
+              <td class="duration" data-value="63721616">0.070</td>
+              <td class="duration" data-value="382329700">0.382</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.random_allocation_format_should_be_selected()</td>
+              <td>1</td>
+              <td class="duration" data-value="18015300">0.018</td>
+              <td class="duration" data-value="18015300">0.018</td>
+              <td class="duration" data-value="18015300">0.018</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.setup()</td>
+              <td>81</td>
+              <td class="duration" data-value="1143888562">1.143</td>
+              <td class="duration" data-value="1143888562">1.714</td>
+              <td class="duration" data-value="92654973600">1:32.654</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.tearDown()</td>
+              <td>81</td>
+              <td class="duration" data-value="634591040">0.634</td>
+              <td class="duration" data-value="634591040">0.706</td>
+              <td class="duration" data-value="51401874300">51.401</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.the_group_input_has_value(java.lang.Integer)</td>
+              <td>1</td>
+              <td class="duration" data-value="32028300">0.032</td>
+              <td class="duration" data-value="32028300">0.032</td>
+              <td class="duration" data-value="32028300">0.032</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.the_user_input_has_value(java.lang.Integer)</td>
+              <td>1</td>
+              <td class="duration" data-value="29025400">0.029</td>
+              <td class="duration" data-value="29025400">0.029</td>
+              <td class="duration" data-value="29025400">0.029</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.BreakoutGroupStepDefinitions.user_choice_format_should_be_selected()</td>
+              <td>1</td>
+              <td class="duration" data-value="22020200">0.022</td>
+              <td class="duration" data-value="22020200">0.022</td>
+              <td class="duration" data-value="22020200">0.022</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityConfigStepDefinitions.i_click_on_suit(java.lang.String)</td>
+              <td>5</td>
+              <td class="duration" data-value="90479820">0.090</td>
+              <td class="duration" data-value="90479820">0.102</td>
+              <td class="duration" data-value="452399100">0.452</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityConfigStepDefinitions.i_click_on_value(java.lang.String)</td>
+              <td>14</td>
+              <td class="duration" data-value="104806550">0.104</td>
+              <td class="duration" data-value="104806550">0.150</td>
+              <td class="duration" data-value="1467291700">1.467</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityConfigStepDefinitions.i_have_gone_to_the_new_activity_page()</td>
+              <td>7</td>
+              <td class="duration" data-value="119391485">0.119</td>
+              <td class="duration" data-value="119391485">0.221</td>
+              <td class="duration" data-value="835740400">0.835</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityConfigStepDefinitions.i_press_the_add_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="87077700">0.087</td>
+              <td class="duration" data-value="87077700">0.087</td>
+              <td class="duration" data-value="87077700">0.087</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityConfigStepDefinitions.i_press_the_add_suit_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="91079900">0.091</td>
+              <td class="duration" data-value="91079900">0.091</td>
+              <td class="duration" data-value="91079900">0.091</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityConfigStepDefinitions.i_should_see_an_error_message()</td>
+              <td>2</td>
+              <td class="duration" data-value="31025800">0.031</td>
+              <td class="duration" data-value="31025800">0.032</td>
+              <td class="duration" data-value="62051600">0.062</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityConfigStepDefinitions.i_should_see_suit(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="49043900">0.049</td>
+              <td class="duration" data-value="49043900">0.049</td>
+              <td class="duration" data-value="49043900">0.049</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityConfigStepDefinitions.i_should_see_the_card_suits_that_will_be_used()</td>
+              <td>1</td>
+              <td class="duration" data-value="191168100">0.191</td>
+              <td class="duration" data-value="191168100">0.191</td>
+              <td class="duration" data-value="191168100">0.191</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityConfigStepDefinitions.i_should_see_the_card_values_that_will_be_used()</td>
+              <td>1</td>
+              <td class="duration" data-value="628553400">0.628</td>
+              <td class="duration" data-value="628553400">0.628</td>
+              <td class="duration" data-value="628553400">0.628</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityConfigStepDefinitions.i_should_see_value(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="49045600">0.049</td>
+              <td class="duration" data-value="49045600">0.049</td>
+              <td class="duration" data-value="49045600">0.049</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityConfigStepDefinitions.i_type_in_suit(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="69061800">0.069</td>
+              <td class="duration" data-value="69061800">0.069</td>
+              <td class="duration" data-value="69061800">0.069</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityConfigStepDefinitions.i_type_in_value(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="76067600">0.076</td>
+              <td class="duration" data-value="76067600">0.076</td>
+              <td class="duration" data-value="76067600">0.076</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityConfigStepDefinitions.setup()</td>
+              <td>81</td>
+              <td class="duration" data-value="1128385233">1.128</td>
+              <td class="duration" data-value="1128385233">1.207</td>
+              <td class="duration" data-value="91399203900">1:31.399</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityConfigStepDefinitions.suit_is_added_to_the_suits_display(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="40033200">0.040</td>
+              <td class="duration" data-value="40033200">0.040</td>
+              <td class="duration" data-value="40033200">0.040</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityConfigStepDefinitions.suit_is_removed(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="12009500">0.012</td>
+              <td class="duration" data-value="12009500">0.012</td>
+              <td class="duration" data-value="12009500">0.012</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityConfigStepDefinitions.tearDown()</td>
+              <td>81</td>
+              <td class="duration" data-value="618692691">0.618</td>
+              <td class="duration" data-value="618692691">0.675</td>
+              <td class="duration" data-value="50114108000">50.114</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityConfigStepDefinitions.value_is_added_to_the_values_display(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="46039500">0.046</td>
+              <td class="duration" data-value="46039500">0.046</td>
+              <td class="duration" data-value="46039500">0.046</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityConfigStepDefinitions.value_is_removed(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="18015600">0.018</td>
+              <td class="duration" data-value="18015600">0.018</td>
+              <td class="duration" data-value="18015600">0.018</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityGameStepDefinitions.appears_in_the_player_list(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="26021300">0.026</td>
+              <td class="duration" data-value="26021300">0.026</td>
+              <td class="duration" data-value="26021300">0.026</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityGameStepDefinitions.card_and_card_are_swapped(java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="94082900">0.094</td>
+              <td class="duration" data-value="94082900">0.094</td>
+              <td class="duration" data-value="94082900">0.094</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityGameStepDefinitions.i_can_see_a_card_for(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="19016100">0.019</td>
+              <td class="duration" data-value="19016100">0.023</td>
+              <td class="duration" data-value="38032200">0.038</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityGameStepDefinitions.i_click_player_card(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="179657450">0.179</td>
+              <td class="duration" data-value="179657450">0.183</td>
+              <td class="duration" data-value="359314900">0.359</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityGameStepDefinitions.i_click_the_add_player_button()</td>
+              <td>8</td>
+              <td class="duration" data-value="84825062">0.084</td>
+              <td class="duration" data-value="84825062">0.100</td>
+              <td class="duration" data-value="678600500">0.678</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityGameStepDefinitions.i_click_the_play_button()</td>
+              <td>3</td>
+              <td class="duration" data-value="79068866">0.079</td>
+              <td class="duration" data-value="79068866">0.086</td>
+              <td class="duration" data-value="237206600">0.237</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityGameStepDefinitions.i_have_gone_to_the_play_game_page()</td>
+              <td>5</td>
+              <td class="duration" data-value="118304740">0.118</td>
+              <td class="duration" data-value="118304740">0.209</td>
+              <td class="duration" data-value="591523700">0.591</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityGameStepDefinitions.i_should_see_an_error_message()</td>
+              <td>2</td>
+              <td class="duration" data-value="37032650">0.037</td>
+              <td class="duration" data-value="37032650">0.037</td>
+              <td class="duration" data-value="74065300">0.074</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityGameStepDefinitions.i_type_into_the_player_box(java.lang.String)</td>
+              <td>8</td>
+              <td class="duration" data-value="63556775">0.063</td>
+              <td class="duration" data-value="63556775">0.078</td>
+              <td class="duration" data-value="508454200">0.508</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityGameStepDefinitions.setup()</td>
+              <td>81</td>
+              <td class="duration" data-value="1128416758">1.128</td>
+              <td class="duration" data-value="1128416758">1.198</td>
+              <td class="duration" data-value="91401757400">1:31.401</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityGameStepDefinitions.tearDown()</td>
+              <td>81</td>
+              <td class="duration" data-value="631810204">0.631</td>
+              <td class="duration" data-value="631810204">0.879</td>
+              <td class="duration" data-value="51176626600">51.176</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CardActivityGameStepDefinitions.the_card_for_has_a_card_value(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="38534550">0.038</td>
+              <td class="duration" data-value="38534550">0.040</td>
+              <td class="duration" data-value="77069100">0.077</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CreateGroupStepDefinitions.i_enter_as_group_name_field(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="67059500">0.067</td>
+              <td class="duration" data-value="67059500">0.067</td>
+              <td class="duration" data-value="134119000">0.134</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CreateGroupStepDefinitions.i_enter_as_user_name_field_for_adding_group_members(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="61804400">0.061</td>
+              <td class="duration" data-value="61804400">0.071</td>
+              <td class="duration" data-value="247217600">0.247</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CreateGroupStepDefinitions.i_press_the_and_button()</td>
+              <td>2</td>
+              <td class="duration" data-value="72063200">0.072</td>
+              <td class="duration" data-value="72063200">0.076</td>
+              <td class="duration" data-value="144126400">0.144</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CreateGroupStepDefinitions.i_press_the_create_button()</td>
+              <td>3</td>
+              <td class="duration" data-value="82405966">0.082</td>
+              <td class="duration" data-value="82405966">0.094</td>
+              <td class="duration" data-value="247217900">0.247</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CreateGroupStepDefinitions.i_press_the_remove_button()</td>
+              <td>2</td>
+              <td class="duration" data-value="77567750">0.077</td>
+              <td class="duration" data-value="77567750">0.082</td>
+              <td class="duration" data-value="155135500">0.155</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CreateGroupStepDefinitions.i_should_see_a_message_for_adding_user_successfully()</td>
+              <td>1</td>
+              <td class="duration" data-value="35030500">0.035</td>
+              <td class="duration" data-value="35030500">0.035</td>
+              <td class="duration" data-value="35030500">0.035</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CreateGroupStepDefinitions.i_should_see_a_message_for_removing_user_successfully()</td>
+              <td>1</td>
+              <td class="duration" data-value="23022400">0.023</td>
+              <td class="duration" data-value="23022400">0.023</td>
+              <td class="duration" data-value="23022400">0.023</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CreateGroupStepDefinitions.i_should_see_an_error_message_for_invalid_group_name()</td>
+              <td>1</td>
+              <td class="duration" data-value="29026000">0.029</td>
+              <td class="duration" data-value="29026000">0.029</td>
+              <td class="duration" data-value="29026000">0.029</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CreateGroupStepDefinitions.i_should_see_an_error_message_for_invalid_user()</td>
+              <td>1</td>
+              <td class="duration" data-value="26022300">0.026</td>
+              <td class="duration" data-value="26022300">0.026</td>
+              <td class="duration" data-value="26022300">0.026</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CreateGroupStepDefinitions.i_should_see_an_error_message_for_invalid_user_name()</td>
+              <td>2</td>
+              <td class="duration" data-value="26021650">0.026</td>
+              <td class="duration" data-value="26021650">0.029</td>
+              <td class="duration" data-value="52043300">0.052</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CreateGroupStepDefinitions.i_should_see_the_group_is_created_successfully_message()</td>
+              <td>1</td>
+              <td class="duration" data-value="34030100">0.034</td>
+              <td class="duration" data-value="34030100">0.034</td>
+              <td class="duration" data-value="34030100">0.034</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CreateGroupStepDefinitions.i_visit()</td>
+              <td>3</td>
+              <td class="duration" data-value="121774700">0.121</td>
+              <td class="duration" data-value="121774700">0.177</td>
+              <td class="duration" data-value="365324100">0.365</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CreateGroupStepDefinitions.i_visit_the_group_configuration_page()</td>
+              <td>4</td>
+              <td class="duration" data-value="105343975">0.105</td>
+              <td class="duration" data-value="105343975">0.171</td>
+              <td class="duration" data-value="421375900">0.421</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CreateGroupStepDefinitions.setup()</td>
+              <td>81</td>
+              <td class="duration" data-value="1138709730">1.138</td>
+              <td class="duration" data-value="1138709730">1.196</td>
+              <td class="duration" data-value="92235488200">1:32.235</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.CreateGroupStepDefinitions.tearDown()</td>
+              <td>81</td>
+              <td class="duration" data-value="648968277">0.648</td>
+              <td class="duration" data-value="648968277">1.150</td>
+              <td class="duration" data-value="52566430500">52.566</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.JoinMeetingStepDefinitions.i_enter_as_meeting_ID_field_to_join_a_meeting(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="69311025">0.069</td>
+              <td class="duration" data-value="69311025">0.093</td>
+              <td class="duration" data-value="277244100">0.277</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.JoinMeetingStepDefinitions.i_press_the_join_button()</td>
+              <td>5</td>
+              <td class="duration" data-value="86677380">0.086</td>
+              <td class="duration" data-value="86677380">0.095</td>
+              <td class="duration" data-value="433386900">0.433</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.JoinMeetingStepDefinitions.i_should_be_able_to_see_all_active_meetings()</td>
+              <td>1</td>
+              <td class="duration" data-value="147130400">0.147</td>
+              <td class="duration" data-value="147130400">0.147</td>
+              <td class="duration" data-value="147130400">0.147</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.JoinMeetingStepDefinitions.i_should_see_a_message_for_joining_the_meeting()</td>
+              <td>2</td>
+              <td class="duration" data-value="31025800">0.031</td>
+              <td class="duration" data-value="31025800">0.034</td>
+              <td class="duration" data-value="62051600">0.062</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.JoinMeetingStepDefinitions.i_should_see_an_error_message_for_inactive_meeting()</td>
+              <td>2</td>
+              <td class="duration" data-value="30024850">0.030</td>
+              <td class="duration" data-value="30024850">0.036</td>
+              <td class="duration" data-value="60049700">0.060</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.JoinMeetingStepDefinitions.i_should_see_an_error_message_for_not_entering_a_meeting_id()</td>
+              <td>1</td>
+              <td class="duration" data-value="28024600">0.028</td>
+              <td class="duration" data-value="28024600">0.028</td>
+              <td class="duration" data-value="28024600">0.028</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.JoinMeetingStepDefinitions.i_visit_the_page_for_joining_a_meeting()</td>
+              <td>6</td>
+              <td class="duration" data-value="124943716">0.124</td>
+              <td class="duration" data-value="124943716">0.233</td>
+              <td class="duration" data-value="749662300">0.749</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.JoinMeetingStepDefinitions.setup()</td>
+              <td>81</td>
+              <td class="duration" data-value="1151264022">1.151</td>
+              <td class="duration" data-value="1151264022">1.227</td>
+              <td class="duration" data-value="93252385800">1:33.252</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.JoinMeetingStepDefinitions.tearDown()</td>
+              <td>81</td>
+              <td class="duration" data-value="638330269">0.638</td>
+              <td class="duration" data-value="638330269">0.925</td>
+              <td class="duration" data-value="51704751800">51.704</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.LoginStepDefinitions.i_enter_as_new_password_field(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="60051400">0.060</td>
+              <td class="duration" data-value="60051400">0.060</td>
+              <td class="duration" data-value="60051400">0.060</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.LoginStepDefinitions.i_enter_as_password_field(java.lang.String)</td>
+              <td>10</td>
+              <td class="duration" data-value="62355350">0.062</td>
+              <td class="duration" data-value="62355350">0.071</td>
+              <td class="duration" data-value="623553500">0.623</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.LoginStepDefinitions.i_enter_as_user_name_field(java.lang.String)</td>
+              <td>10</td>
+              <td class="duration" data-value="65556500">0.065</td>
+              <td class="duration" data-value="65556500">0.083</td>
+              <td class="duration" data-value="655565000">0.655</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.LoginStepDefinitions.i_press_the_logout_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="72063500">0.072</td>
+              <td class="duration" data-value="72063500">0.072</td>
+              <td class="duration" data-value="72063500">0.072</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.LoginStepDefinitions.i_press_the_reset_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="83073900">0.083</td>
+              <td class="duration" data-value="83073900">0.083</td>
+              <td class="duration" data-value="83073900">0.083</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.LoginStepDefinitions.i_press_the_submit_button()</td>
+              <td>10</td>
+              <td class="duration" data-value="97085750">0.097</td>
+              <td class="duration" data-value="97085750">0.214</td>
+              <td class="duration" data-value="970857500">0.970</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.LoginStepDefinitions.i_should_be_in_the_login_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="4004000">0.004</td>
+              <td class="duration" data-value="4004000">0.004</td>
+              <td class="duration" data-value="4004000">0.004</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.LoginStepDefinitions.i_should_see_the_password_error_message()</td>
+              <td>3</td>
+              <td class="duration" data-value="26690500">0.026</td>
+              <td class="duration" data-value="26690500">0.031</td>
+              <td class="duration" data-value="80071500">0.080</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.LoginStepDefinitions.i_should_see_the_username_error_message()</td>
+              <td>3</td>
+              <td class="duration" data-value="29358933">0.029</td>
+              <td class="duration" data-value="29358933">0.035</td>
+              <td class="duration" data-value="88076800">0.088</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.LoginStepDefinitions.i_should_see_the_welcome_page()</td>
+              <td>3</td>
+              <td class="duration" data-value="24354300">0.024</td>
+              <td class="duration" data-value="24354300">0.027</td>
+              <td class="duration" data-value="73062900">0.073</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.LoginStepDefinitions.i_visit(java.lang.String)</td>
+              <td>10</td>
+              <td class="duration" data-value="116704070">0.116</td>
+              <td class="duration" data-value="116704070">0.217</td>
+              <td class="duration" data-value="1167040700">1.167</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.LoginStepDefinitions.setup()</td>
+              <td>81</td>
+              <td class="duration" data-value="1160518150">1.160</td>
+              <td class="duration" data-value="1160518150">1.230</td>
+              <td class="duration" data-value="94001970200">1:34.001</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.LoginStepDefinitions.tearDown()</td>
+              <td>81</td>
+              <td class="duration" data-value="654554990">0.654</td>
+              <td class="duration" data-value="654554990">1.294</td>
+              <td class="duration" data-value="53018954200">53.018</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.QuestionsStepDefinition.i_enter_as_answer_field(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="82066200">0.082</td>
+              <td class="duration" data-value="82066200">0.082</td>
+              <td class="duration" data-value="82066200">0.082</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.QuestionsStepDefinition.i_enter_as_question_field(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="79071300">0.079</td>
+              <td class="duration" data-value="79071300">0.079</td>
+              <td class="duration" data-value="79071300">0.079</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.QuestionsStepDefinition.i_press_the_answer_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="82070800">0.082</td>
+              <td class="duration" data-value="82070800">0.082</td>
+              <td class="duration" data-value="82070800">0.082</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.QuestionsStepDefinition.i_press_the_ask_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="80069500">0.080</td>
+              <td class="duration" data-value="80069500">0.080</td>
+              <td class="duration" data-value="80069500">0.080</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.QuestionsStepDefinition.i_select_question_to_answer(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="80073000">0.080</td>
+              <td class="duration" data-value="80073000">0.080</td>
+              <td class="duration" data-value="80073000">0.080</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.QuestionsStepDefinition.i_select_question_to_delete(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="101088400">0.101</td>
+              <td class="duration" data-value="101088400">0.101</td>
+              <td class="duration" data-value="101088400">0.101</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.QuestionsStepDefinition.i_select_question_to_mark(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="115102100">0.115</td>
+              <td class="duration" data-value="115102100">0.115</td>
+              <td class="duration" data-value="115102100">0.115</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.QuestionsStepDefinition.i_select_question_to_upvote(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="112096400">0.112</td>
+              <td class="duration" data-value="112096400">0.112</td>
+              <td class="duration" data-value="112096400">0.112</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.QuestionsStepDefinition.i_should_see_all_questions_sorted_by_answered_questions()</td>
+              <td>1</td>
+              <td class="duration" data-value="27023600">0.027</td>
+              <td class="duration" data-value="27023600">0.027</td>
+              <td class="duration" data-value="27023600">0.027</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.QuestionsStepDefinition.i_should_see_all_questions_sorted_by_most_voted_questions()</td>
+              <td>1</td>
+              <td class="duration" data-value="36030500">0.036</td>
+              <td class="duration" data-value="36030500">0.036</td>
+              <td class="duration" data-value="36030500">0.036</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.QuestionsStepDefinition.i_should_see_all_questions_sorted_by_time()</td>
+              <td>1</td>
+              <td class="duration" data-value="28021200">0.028</td>
+              <td class="duration" data-value="28021200">0.028</td>
+              <td class="duration" data-value="28021200">0.028</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.QuestionsStepDefinition.i_should_see_my_answer_for_question_one()</td>
+              <td>1</td>
+              <td class="duration" data-value="29025200">0.029</td>
+              <td class="duration" data-value="29025200">0.029</td>
+              <td class="duration" data-value="29025200">0.029</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.QuestionsStepDefinition.i_should_see_my_question()</td>
+              <td>1</td>
+              <td class="duration" data-value="34029900">0.034</td>
+              <td class="duration" data-value="34029900">0.034</td>
+              <td class="duration" data-value="34029900">0.034</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.QuestionsStepDefinition.i_should_see_question_one_as_resolved_to_true()</td>
+              <td>1</td>
+              <td class="duration" data-value="27023000">0.027</td>
+              <td class="duration" data-value="27023000">0.027</td>
+              <td class="duration" data-value="27023000">0.027</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.QuestionsStepDefinition.i_should_see_question_one_removed()</td>
+              <td>1</td>
+              <td class="duration" data-value="34030900">0.034</td>
+              <td class="duration" data-value="34030900">0.034</td>
+              <td class="duration" data-value="34030900">0.034</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.QuestionsStepDefinition.i_should_see_question_with_one_more_upvote()</td>
+              <td>1</td>
+              <td class="duration" data-value="33030800">0.033</td>
+              <td class="duration" data-value="33030800">0.033</td>
+              <td class="duration" data-value="33030800">0.033</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.QuestionsStepDefinition.i_sort_question_by(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="108429766">0.108</td>
+              <td class="duration" data-value="108429766">0.116</td>
+              <td class="duration" data-value="325289300">0.325</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.QuestionsStepDefinition.i_visit_questions_page()</td>
+              <td>8</td>
+              <td class="duration" data-value="125237075">0.125</td>
+              <td class="duration" data-value="125237075">0.233</td>
+              <td class="duration" data-value="1001896600">1.001</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.QuestionsStepDefinition.setup()</td>
+              <td>81</td>
+              <td class="duration" data-value="1171837919">1.171</td>
+              <td class="duration" data-value="1171837919">1.220</td>
+              <td class="duration" data-value="94918871500">1:34.918</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.QuestionsStepDefinition.tearDown()</td>
+              <td>81</td>
+              <td class="duration" data-value="631403667">0.631</td>
+              <td class="duration" data-value="631403667">1.165</td>
+              <td class="duration" data-value="51143697100">51.143</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_am_taken_to_create_meeting_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="8007300">0.008</td>
+              <td class="duration" data-value="8007300">0.008</td>
+              <td class="duration" data-value="8007300">0.008</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_can_see_empty_meeting_time_message()</td>
+              <td>1</td>
+              <td class="duration" data-value="21019000">0.021</td>
+              <td class="duration" data-value="21019000">0.021</td>
+              <td class="duration" data-value="21019000">0.021</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_can_see_invalid_meeting_id_message()</td>
+              <td>1</td>
+              <td class="duration" data-value="32026400">0.032</td>
+              <td class="duration" data-value="32026400">0.032</td>
+              <td class="duration" data-value="32026400">0.032</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_can_see_invalid_meeting_time_message()</td>
+              <td>1</td>
+              <td class="duration" data-value="20018700">0.020</td>
+              <td class="duration" data-value="20018700">0.020</td>
+              <td class="duration" data-value="20018700">0.020</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_can_see_meeting_ID_is_set(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="30024800">0.030</td>
+              <td class="duration" data-value="30024800">0.030</td>
+              <td class="duration" data-value="30024800">0.030</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_can_see_meeting_description_is_set(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="35030800">0.035</td>
+              <td class="duration" data-value="35030800">0.035</td>
+              <td class="duration" data-value="35030800">0.035</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_can_see_meeting_end_date_is_set()</td>
+              <td>1</td>
+              <td class="duration" data-value="36030300">0.036</td>
+              <td class="duration" data-value="36030300">0.036</td>
+              <td class="duration" data-value="36030300">0.036</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_can_see_meeting_end_time_is_set()</td>
+              <td>1</td>
+              <td class="duration" data-value="38034500">0.038</td>
+              <td class="duration" data-value="38034500">0.038</td>
+              <td class="duration" data-value="38034500">0.038</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_can_see_meeting_group_is_set(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="34030100">0.034</td>
+              <td class="duration" data-value="34030100">0.034</td>
+              <td class="duration" data-value="34030100">0.034</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_can_see_meeting_start_date_is_set()</td>
+              <td>1</td>
+              <td class="duration" data-value="23020000">0.023</td>
+              <td class="duration" data-value="23020000">0.023</td>
+              <td class="duration" data-value="23020000">0.023</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_can_see_meeting_start_time_is_set()</td>
+              <td>1</td>
+              <td class="duration" data-value="28023100">0.028</td>
+              <td class="duration" data-value="28023100">0.028</td>
+              <td class="duration" data-value="28023100">0.028</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_can_see_meeting_title_is_set(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="34031200">0.034</td>
+              <td class="duration" data-value="34031200">0.034</td>
+              <td class="duration" data-value="34031200">0.034</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_can_see_recurring_is_set_as_true()</td>
+              <td>1</td>
+              <td class="duration" data-value="35030800">0.035</td>
+              <td class="duration" data-value="35030800">0.035</td>
+              <td class="duration" data-value="35030800">0.035</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_can_see_success_message_for_creating_a_meeting()</td>
+              <td>1</td>
+              <td class="duration" data-value="22021200">0.022</td>
+              <td class="duration" data-value="22021200">0.022</td>
+              <td class="duration" data-value="22021200">0.022</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_choose_group(java.lang.String)</td>
+              <td>5</td>
+              <td class="duration" data-value="44838820">0.044</td>
+              <td class="duration" data-value="44838820">0.050</td>
+              <td class="duration" data-value="224194100">0.224</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_choose_recurring_true()</td>
+              <td>1</td>
+              <td class="duration" data-value="50044000">0.050</td>
+              <td class="duration" data-value="50044000">0.050</td>
+              <td class="duration" data-value="50044000">0.050</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_click_on_create_a_meeting()</td>
+              <td>1</td>
+              <td class="duration" data-value="208181300">0.208</td>
+              <td class="duration" data-value="208181300">0.208</td>
+              <td class="duration" data-value="208181300">0.208</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_click_submit_button()</td>
+              <td>11</td>
+              <td class="duration" data-value="83710236">0.083</td>
+              <td class="duration" data-value="83710236">0.107</td>
+              <td class="duration" data-value="920812600">0.920</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_enter_meeting_description(java.lang.String)</td>
+              <td>5</td>
+              <td class="duration" data-value="65857640">0.065</td>
+              <td class="duration" data-value="65857640">0.072</td>
+              <td class="duration" data-value="329288200">0.329</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_enter_meeting_id(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="65058050">0.065</td>
+              <td class="duration" data-value="65058050">0.072</td>
+              <td class="duration" data-value="260232200">0.260</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_enter_meeting_title(java.lang.String)</td>
+              <td>5</td>
+              <td class="duration" data-value="64656620">0.064</td>
+              <td class="duration" data-value="64656620">0.077</td>
+              <td class="duration" data-value="323283100">0.323</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_have_opened_the_create_meeting_page()</td>
+              <td>13</td>
+              <td class="duration" data-value="114409907">0.114</td>
+              <td class="duration" data-value="114409907">0.126</td>
+              <td class="duration" data-value="1487328800">1.487</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_have_opened_the_home_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="101091100">0.101</td>
+              <td class="duration" data-value="101091100">0.101</td>
+              <td class="duration" data-value="101091100">0.101</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_set_invalid_meeting_end_date()</td>
+              <td>1</td>
+              <td class="duration" data-value="51045200">0.051</td>
+              <td class="duration" data-value="51045200">0.051</td>
+              <td class="duration" data-value="51045200">0.051</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_set_invalid_meeting_end_time()</td>
+              <td>1</td>
+              <td class="duration" data-value="62055200">0.062</td>
+              <td class="duration" data-value="62055200">0.062</td>
+              <td class="duration" data-value="62055200">0.062</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_set_meeting_end_date()</td>
+              <td>3</td>
+              <td class="duration" data-value="64056500">0.064</td>
+              <td class="duration" data-value="64056500">0.066</td>
+              <td class="duration" data-value="192169500">0.192</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_set_meeting_end_time()</td>
+              <td>3</td>
+              <td class="duration" data-value="64722600">0.064</td>
+              <td class="duration" data-value="64722600">0.067</td>
+              <td class="duration" data-value="194167800">0.194</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_set_meeting_start_date()</td>
+              <td>4</td>
+              <td class="duration" data-value="64307100">0.064</td>
+              <td class="duration" data-value="64307100">0.077</td>
+              <td class="duration" data-value="257228400">0.257</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.i_set_meeting_start_time()</td>
+              <td>4</td>
+              <td class="duration" data-value="61553575">0.061</td>
+              <td class="duration" data-value="61553575">0.064</td>
+              <td class="duration" data-value="246214300">0.246</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.setup()</td>
+              <td>81</td>
+              <td class="duration" data-value="1183663028">1.183</td>
+              <td class="duration" data-value="1183663028">1.232</td>
+              <td class="duration" data-value="95876705300">1:35.876</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ScheduleAMeetingStepDefinitions.tearDown()</td>
+              <td>81</td>
+              <td class="duration" data-value="661044425">0.661</td>
+              <td class="duration" data-value="661044425">1.230</td>
+              <td class="duration" data-value="53544598500">53.544</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ViewMeetingScheduleStepDefinitions.i_choose_view_all_meeting()</td>
+              <td>2</td>
+              <td class="duration" data-value="123109700">0.123</td>
+              <td class="duration" data-value="123109700">0.126</td>
+              <td class="duration" data-value="246219400">0.246</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ViewMeetingScheduleStepDefinitions.i_choose_view_past_meeting()</td>
+              <td>1</td>
+              <td class="duration" data-value="102090000">0.102</td>
+              <td class="duration" data-value="102090000">0.102</td>
+              <td class="duration" data-value="102090000">0.102</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ViewMeetingScheduleStepDefinitions.i_choose_view_upcoming_meeting()</td>
+              <td>1</td>
+              <td class="duration" data-value="128112800">0.128</td>
+              <td class="duration" data-value="128112800">0.128</td>
+              <td class="duration" data-value="128112800">0.128</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ViewMeetingScheduleStepDefinitions.i_have_opened_the_home_page()</td>
+              <td>4</td>
+              <td class="duration" data-value="96585675">0.096</td>
+              <td class="duration" data-value="96585675">0.104</td>
+              <td class="duration" data-value="386342700">0.386</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ViewMeetingScheduleStepDefinitions.i_should_see_all_meetings_message()</td>
+              <td>1</td>
+              <td class="duration" data-value="30026500">0.030</td>
+              <td class="duration" data-value="30026500">0.030</td>
+              <td class="duration" data-value="30026500">0.030</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ViewMeetingScheduleStepDefinitions.i_should_see_meeting_ID()</td>
+              <td>1</td>
+              <td class="duration" data-value="35027300">0.035</td>
+              <td class="duration" data-value="35027300">0.035</td>
+              <td class="duration" data-value="35027300">0.035</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ViewMeetingScheduleStepDefinitions.i_should_see_meeting_description()</td>
+              <td>1</td>
+              <td class="duration" data-value="30026100">0.030</td>
+              <td class="duration" data-value="30026100">0.030</td>
+              <td class="duration" data-value="30026100">0.030</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ViewMeetingScheduleStepDefinitions.i_should_see_meeting_time()</td>
+              <td>1</td>
+              <td class="duration" data-value="32028800">0.032</td>
+              <td class="duration" data-value="32028800">0.032</td>
+              <td class="duration" data-value="32028800">0.032</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ViewMeetingScheduleStepDefinitions.i_should_see_meeting_title()</td>
+              <td>1</td>
+              <td class="duration" data-value="29025900">0.029</td>
+              <td class="duration" data-value="29025900">0.029</td>
+              <td class="duration" data-value="29025900">0.029</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ViewMeetingScheduleStepDefinitions.i_should_see_past_meetings_message()</td>
+              <td>1</td>
+              <td class="duration" data-value="36033600">0.036</td>
+              <td class="duration" data-value="36033600">0.036</td>
+              <td class="duration" data-value="36033600">0.036</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ViewMeetingScheduleStepDefinitions.i_should_see_upcoming_meetings_message()</td>
+              <td>1</td>
+              <td class="duration" data-value="30026700">0.030</td>
+              <td class="duration" data-value="30026700">0.030</td>
+              <td class="duration" data-value="30026700">0.030</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ViewMeetingScheduleStepDefinitions.i_should_see_user_names()</td>
+              <td>1</td>
+              <td class="duration" data-value="33028700">0.033</td>
+              <td class="duration" data-value="33028700">0.033</td>
+              <td class="duration" data-value="33028700">0.033</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ViewMeetingScheduleStepDefinitions.setup()</td>
+              <td>81</td>
+              <td class="duration" data-value="1186196101">1.186</td>
+              <td class="duration" data-value="1186196101">1.228</td>
+              <td class="duration" data-value="96081884200">1:36.081</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">nz.auckland.se754.a6.webapp.ViewMeetingScheduleStepDefinitions.tearDown()</td>
+              <td>81</td>
+              <td class="duration" data-value="636915601">0.636</td>
+              <td class="duration" data-value="636915601">1.129</td>
+              <td class="duration" data-value="51590163700">51.590</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>157</td>
+            <td>1866</td>
+            <td class="duration">0.718</td>
+            <td class="duration">1:36.081</td>
+            <td class="duration">22:21.134</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
